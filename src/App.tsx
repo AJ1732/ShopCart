@@ -1,17 +1,16 @@
+import { Outlet } from "react-router-dom"
+import Navbar from "./components/Navbar/Navbar"
+
 function App() {
 
   return (
     <div className="content-grid all | min-h-dvh">
       {/* NAVBAR */}
-      <nav className="full-width content-grid |">
-        <div>
-          NavBar
-        </div>
-      </nav>
+      <Navbar />
 
       {/* MAIN CONTENT */}
       <main className="content">
-        <h1>Hello</h1>
+        <Outlet />
       </main>
     </div>
   )
