@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Navbar = () => {
   return (
     <nav className="full-width content-grid | bg-[#353535] text-white drop-shadow-2xl">
@@ -7,9 +9,9 @@ const Navbar = () => {
         </header>
         
         <ul className="text-xl | flex basis-40 justify-between items-center gap-2">
-          <li>Link</li>
-          <li>Link</li>
-          <li>Link</li>
+          <Link to={`/`}>Home</Link>
+          <Link to={`/store`}>Store</Link>
+          <Link to={`/about`}>About</Link>
         </ul>
       </div>
     </nav>
