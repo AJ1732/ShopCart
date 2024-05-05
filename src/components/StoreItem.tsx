@@ -1,3 +1,4 @@
+import { useStoreContext } from "../context/StoreProvider"
 import { formatCurrency } from "../utils/formatCurrency"
 
 type StoreItemProps = {
@@ -7,7 +8,10 @@ type StoreItemProps = {
   imgUrl: string
 }
 
-const StoreItem = ({ name, price, imgUrl }: StoreItemProps) => {
+const StoreItem = ({ id, name, price, imgUrl }: StoreItemProps) => {
+  const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart } = useStoreContext();
+  // const quantity = getItemQuantity(id);
+
   return (
     <article className="bg-white bg-opacity-50 rounded-md">
       {/* ITEM IMAGE */}
@@ -27,17 +31,20 @@ const StoreItem = ({ name, price, imgUrl }: StoreItemProps) => {
           {
             // quantity === 0? 
             0? 
-            <button className="w-full rounded active:bg-[#1A1A1A] focus-within:outline-none">+ Add To Cart</button> 
+            <button 
+              onClick={() => increaseCartQuantity(id)}
+              className="w-full rounded active:bg-[#1A1A1A] focus-within:outline-none"
+            >+ Add To Cart</button> 
             : 
             <div className="grid place-content-center gap-2">
               <div className="flex justify-center items-center gap-3">
-                <button className="w-16 font-bold">-</button>
+                <button onClick={() => decreaseCartQuantity(id)} className="w-16 font-bold">-</button>
                 <p className="max-w-40 font-medium text-xl text-[#1A1A1A]">
                   <span>1</span> in cart
                 </p>
-                <button className="w-16 font-bold">+</button>
+                <button onClick={() => increaseCartQuantity(id)} className="w-16 font-bold">+</button>
               </div>
-              <button className="bg-red-500 hover:bg-red-600">Remove</button>
+              <button onClick={() => removeFromCart(id)} className="bg-red-500 hover:bg-red-600">Remove</button>
             </div>
           }
         </div>
