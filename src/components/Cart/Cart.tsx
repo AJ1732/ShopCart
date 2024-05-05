@@ -2,8 +2,8 @@ import cart from  '../../assets/cart.svg'
 
 const Cart = () => {
   return (
-    <button className="fixed top-24 end-1">
-        <figure className="size-10">
+    <button className="fixed top-[clamp(5.5rem,_12vw,_7.5rem)]  end-1">
+        <figure className="size-8">
           <img src={cart} alt="" />
         </figure>
 
