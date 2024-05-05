@@ -79,7 +79,7 @@ button {
   transition: all 0.25s;
 }
 button:hover {
-  background-color: #e99e17;
+  background-color: #f09b00;
 }
 button:active {
   transform: scale(0.98);

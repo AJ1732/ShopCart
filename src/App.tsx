@@ -9,7 +9,7 @@ function App() {
       <Navbar />
 
       {/* MAIN CONTENT */}
-      <main className="content">
+      <main className="content py-5">
         <Outlet />
       </main>
     </div>
