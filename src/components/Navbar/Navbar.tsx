@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom"
-import cart from  '../../assets/cart.svg'
+import Cart from "../Cart/Cart"
 
 const Navbar = () => {
   return (
     <nav className="full-width content-grid | bg-[#1a1a1a] text-white drop-shadow-2xl">
+      {/* NAVBAR CONTENT */}
       <div className="flex justify-between items-center">
         <header>
           <h1 className="text-[clamp(1.5rem,_2vw_+_1rem,_2rem)]">Logo</h1>
@@ -16,11 +17,8 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <button className="fixed top-20 end-1">
-        <figure className="size-10">
-          <img src={cart} alt="" />
-        </figure>
-      </button>
+      {/* CART ICON */}
+      <Cart />
     </nav>
   )
 }
