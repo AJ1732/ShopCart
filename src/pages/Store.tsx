@@ -1,3 +1,4 @@
+import StoreItem from '../components/StoreItem'
 import storeItems from '../data/items.json'
 
 const Store = () => {
@@ -8,14 +9,8 @@ const Store = () => {
       </header>
 
       <section className='w-4/5 mx-auto sm:w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4'>
-        {storeItems.map(({ id }) => (
-          <div 
-            key={id}
-            className='w-full min-h-8 bg-white bg-opacity-55 py-1 px-3 border border-[#1a1a1a] rounded-md'  
-          >
-            Item
-          
-          </div>
+        {storeItems.map(item => (
+          <StoreItem key={item.id} {...item} />
         ))}
       </section>
     </div>
