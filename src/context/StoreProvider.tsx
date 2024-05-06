@@ -17,8 +17,8 @@ export const StoreContext = createContext({} as StoreContextValue);
 export const StoreProvider = ({ children }: PropsWithChildren) => {
   const [ cartItems, setCartItems ] = useState<CartItem[]>([]);
 
-  const getItemQuantity = (id: number) => {
-    return cartItems.find( item => item.id === id )?.quantity || 0
+  function getItemQuantity(id: number) {
+    return cartItems.find(item => item.id === id)?.quantity || 0
   }
   
   const increaseCartQuantity = (id: number) => {

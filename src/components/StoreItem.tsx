@@ -10,7 +10,7 @@ type StoreItemProps = {
 
 const StoreItem = ({ id, name, price, imgUrl }: StoreItemProps) => {
   const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart } = useStoreContext();
-  // const quantity = getItemQuantity(id);
+  const quantity = getItemQuantity(id);
 
   return (
     <article className="bg-white bg-opacity-50 rounded-md">
@@ -29,8 +29,8 @@ const StoreItem = ({ id, name, price, imgUrl }: StoreItemProps) => {
 
         <div className="col-span-2 w-full mt-auto mx-auto text-white text-center">
           {
-            // quantity === 0? 
-            0? 
+            quantity === 0? 
+            // 0? 
             <button 
               onClick={() => increaseCartQuantity(id)}
               className="w-full rounded active:bg-[#1A1A1A] focus-within:outline-none"
@@ -39,8 +39,8 @@ const StoreItem = ({ id, name, price, imgUrl }: StoreItemProps) => {
             <div className="grid place-content-center gap-2">
               <div className="flex justify-center items-center gap-3">
                 <button onClick={() => decreaseCartQuantity(id)} className="w-16 font-bold">-</button>
-                <p className="max-w-40 font-medium text-xl text-[#1A1A1A]">
-                  <span>1</span> in cart
+                <p className="font-medium text-xl text-[#1A1A1A]">
+                  <span>{quantity}</span> in cart
                 </p>
                 <button onClick={() => increaseCartQuantity(id)} className="w-16 font-bold">+</button>
               </div>
