@@ -9,6 +9,7 @@ type StoreContextValue = {
   removeFromCart: (id: number) => void
   cartQuantity: number
   cartItems: CartItem[]
+  open: boolean
 }
 
 type CartItem = {
@@ -72,9 +73,10 @@ export const StoreProvider = ({ children }: PropsWithChildren) => {
     increaseCartQuantity,
     decreaseCartQuantity,
     removeFromCart,
+    toggleCart,
     cartItems,
     cartQuantity,
-    toggleCart
+    open
   }
 
   return (

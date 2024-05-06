@@ -1,3 +1,4 @@
+import CartStore from '../components/Cart/CartStore'
 import StoreItem from '../components/StoreItem'
 import storeItems from '../data/items.json'
 
@@ -13,6 +14,8 @@ const Store = () => {
           <StoreItem key={item.id} {...item} />
         ))}
       </section>
+
+      <CartStore />
     </div>
   )
 }
