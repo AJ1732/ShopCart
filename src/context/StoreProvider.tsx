@@ -1,4 +1,5 @@
 import { PropsWithChildren, createContext, useContext, useState } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 type StoreContextValue = {
   toggleCart: () => void
@@ -21,7 +22,7 @@ export const StoreContext = createContext({} as StoreContextValue);
 
 export const StoreProvider = ({ children }: PropsWithChildren) => {
   const [ open, setOpen ] = useState(false);
-  const [ cartItems, setCartItems ] = useState<CartItem[]>([]);
+  const [ cartItems, setCartItems ] = useLocalStorage<CartItem[]>("store", []);
 
   const toggleCart = () => setOpen(!open)
   const cartQuantity = cartItems.reduce((quantity, item) => item.quantity + quantity, 0)
