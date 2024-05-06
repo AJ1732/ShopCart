@@ -1,9 +1,8 @@
 import { NavLink } from "react-router-dom"
-import Cart from "../Cart/Cart"
 
 const Navbar = () => {
   return (
-    <nav className="full-width content-grid | bg-[#1a1a1a] text-white drop-shadow-2xl">
+    <nav className="full-width content-grid z-10 | bg-[#1a1a1a] text-white drop-shadow-2xl">
       {/* NAVBAR CONTENT */}
       <div className="flex justify-between items-center">
         <header>
@@ -15,10 +14,7 @@ const Navbar = () => {
           <NavLink to={`/store`}>Store</NavLink>
           <NavLink to={`/about`}>About</NavLink>
         </ul>
-      </div>
-
-      {/* CART ICON */}
-      <Cart />
+      </div> 
     </nav>
   )
 }

@@ -5,7 +5,7 @@ const Cart = () => {
   const { toggleCart, cartQuantity } = useStoreContext();
 
   return (
-    <button onClick={toggleCart} className="fixed top-[clamp(5.5rem,_12vw,_7.5rem)]  end-1">
+    <button onClick={toggleCart} className="fixed top-24 right-5 end-1 text-white">
         <figure className="size-8">
           <img src={cart} alt="" />
         </figure>

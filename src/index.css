@@ -6,16 +6,13 @@
   color-scheme: light dark;
   color: #1E1E1E;
   background-color: #E1E1E1;
+  overflow: hidden;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* 
-::-webkit-scrollbar {
-  display: none;
-} */
 
 /* GRID LAYOUT */
 .content-grid {

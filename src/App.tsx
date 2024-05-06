@@ -4,12 +4,12 @@ import Navbar from "./components/Navbar/Navbar"
 function App() {
 
   return (
-    <div className="content-grid all | min-h-dvh overflow-hidden">
+    <div className="content-grid all | min-h-dvh w-full">
       {/* NAVBAR */}
       <Navbar />
 
       {/* MAIN CONTENT */}
-      <main className=" full-width content-grid py-5 max-h-[calc(100dvh_-_70px)] overflow-y-scroll">
+      <main className=" full-width content-grid py-5 max-h-[calc(100dvh_-_70px)] overflow-hidden overflow-y-scroll">
         <div className="content">
           <Outlet />
         </div>
