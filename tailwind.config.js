@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        left: "-5px 0px 10px rgb(0 0 0 / 0.25)",
+      }
+    },
   },
   plugins: [],
 }
