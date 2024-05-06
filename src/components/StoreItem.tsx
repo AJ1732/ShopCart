@@ -13,7 +13,7 @@ const StoreItem = ({ id, name, price, imgUrl }: StoreItemProps) => {
   const quantity = getItemQuantity(id);
 
   return (
-    <article className="bg-white bg-opacity-50 rounded-md">
+    <article className="h-fit bg-white bg-opacity-50 rounded-md">
       {/* ITEM IMAGE */}
       <figure className="">
         <img src={imgUrl} alt="Item Image" className="h-52 w-full rounded-t-md object-cover" />
@@ -27,7 +27,7 @@ const StoreItem = ({ id, name, price, imgUrl }: StoreItemProps) => {
 
         <p className="justify-self-end">{formatCurrency(price)}</p>
 
-        <div className="col-span-2 w-full mt-auto mx-auto text-white text-center">
+        <div className="col-span-2 self-end w-full mt-auto mx-auto text-white text-center">
           {
             quantity === 0? 
             // 0? 
