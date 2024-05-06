@@ -1,10 +1,14 @@
 import { PropsWithChildren, createContext, useContext, useState } from "react";
 
 type StoreContextValue = {
+  toggleCart: () => void
+  // closeCart: () => void
   getItemQuantity: (id: number) => number
   increaseCartQuantity: (id: number) => void
   decreaseCartQuantity: (id: number) => void
   removeFromCart: (id: number) => void
+  cartQuantity: number
+  cartItems: CartItem[]
 }
 
 type CartItem = {
@@ -15,7 +19,11 @@ type CartItem = {
 export const StoreContext = createContext({} as StoreContextValue);
 
 export const StoreProvider = ({ children }: PropsWithChildren) => {
+  const [ open, setOpen ] = useState(false);
   const [ cartItems, setCartItems ] = useState<CartItem[]>([]);
+
+  const toggleCart = () => setOpen(!open)
+  const cartQuantity = cartItems.reduce((quantity, item) => item.quantity + quantity, 0)
 
   function getItemQuantity(id: number) {
     return cartItems.find(item => item.id === id)?.quantity || 0
@@ -63,7 +71,10 @@ export const StoreProvider = ({ children }: PropsWithChildren) => {
     getItemQuantity,
     increaseCartQuantity,
     decreaseCartQuantity,
-    removeFromCart
+    removeFromCart,
+    cartItems,
+    cartQuantity,
+    toggleCart
   }
 
   return (
