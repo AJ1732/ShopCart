@@ -12,6 +12,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* 
+::-webkit-scrollbar {
+  display: none;
+} */
 
 /* GRID LAYOUT */
 .content-grid {
@@ -47,7 +51,7 @@
 }
 
 .content-grid.all {
-  grid-template-rows: clamp(70px, 10vw, 100px) 1fr;
+  grid-template-rows: 70px 1fr;
 }
 
 .content-grid > :not(.breakout, .full-width) {
